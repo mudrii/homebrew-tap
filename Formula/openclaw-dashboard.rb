@@ -5,13 +5,13 @@
 class OpenclawDashboard < Formula
   desc "Real-time monitoring dashboard for OpenClaw AI gateway"
   homepage "https://github.com/mudrii/openclaw-dashboard"
-  version "2026.4.13"
+  version "2026.4.29"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/mudrii/openclaw-dashboard/releases/download/v2026.4.13/openclaw-dashboard-darwin-amd64.tar.gz"
-      sha256 "4933d0bde9770bf3becb5d1259c576c105dc8d78499945ae1fe2add7961650c3"
+      url "https://github.com/mudrii/openclaw-dashboard/releases/download/v2026.4.29/openclaw-dashboard-darwin-amd64.tar.gz"
+      sha256 "38d04163038c3353aed5b8c6b37c6eda56ee9c83d8e299599649c11a0c103d14"
 
       define_method(:install) do
         bin.install "openclaw-dashboard"
@@ -27,8 +27,8 @@ class OpenclawDashboard < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/mudrii/openclaw-dashboard/releases/download/v2026.4.13/openclaw-dashboard-darwin-arm64.tar.gz"
-      sha256 "f6057a9048fdbc4afa5f1152a41291047aa7ed9a9ab7b489ce4d1aa12652a4e8"
+      url "https://github.com/mudrii/openclaw-dashboard/releases/download/v2026.4.29/openclaw-dashboard-darwin-arm64.tar.gz"
+      sha256 "3134c4ec019e122dfd444e51827c9040f7dc1fc2bde8f9b268eb89b659ddb35f"
 
       define_method(:install) do
         bin.install "openclaw-dashboard"
@@ -47,8 +47,8 @@ class OpenclawDashboard < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/mudrii/openclaw-dashboard/releases/download/v2026.4.13/openclaw-dashboard-linux-amd64.tar.gz"
-      sha256 "52e1f39f880b8adedd8e22d90daf8dbd778e1635dbccdfe92bd630882b3f457b"
+      url "https://github.com/mudrii/openclaw-dashboard/releases/download/v2026.4.29/openclaw-dashboard-linux-amd64.tar.gz"
+      sha256 "1ab7e39fd6b6f513abee1d00fc9e486a58dfb5685c797047d678b8e493c843b2"
       define_method(:install) do
         bin.install "openclaw-dashboard"
         pkgshare.install "assets/runtime/refresh.sh"
@@ -63,8 +63,8 @@ class OpenclawDashboard < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/mudrii/openclaw-dashboard/releases/download/v2026.4.13/openclaw-dashboard-linux-arm64.tar.gz"
-      sha256 "b6db1b20a545d858b7f9c257cd2873937577931d621b6b9400de947c9f9ac8cd"
+      url "https://github.com/mudrii/openclaw-dashboard/releases/download/v2026.4.29/openclaw-dashboard-linux-arm64.tar.gz"
+      sha256 "d2778a9e175b95d6a32e6430ac15f4caa9e6a582059248b9f01e4f824452ed26"
       define_method(:install) do
         bin.install "openclaw-dashboard"
         pkgshare.install "assets/runtime/refresh.sh"
