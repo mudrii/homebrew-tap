@@ -5,15 +5,15 @@
 class OpenclawDashboard < Formula
   desc "Real-time monitoring dashboard for OpenClaw AI gateway"
   homepage "https://github.com/mudrii/openclaw-dashboard"
-  version "2026.5.13"
+  version "2026.5.20"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/mudrii/openclaw-dashboard/releases/download/v2026.5.13/openclaw-dashboard-darwin-amd64.tar.gz"
-      sha256 "115ad2d7285f63c02be11f47fbbae42ed2d3f15906bf285ff03e867452ca7894"
+    on_intel do
+      url "https://github.com/mudrii/openclaw-dashboard/releases/download/v2026.5.20/openclaw-dashboard-darwin-amd64.tar.gz"
+      sha256 "5d6f335d7009304c6b2ea41c321f9085931445bf874c7637d629050e6fc5eb42"
 
-      define_method(:install) do
+      def install
         bin.install "openclaw-dashboard"
         pkgshare.install "assets/runtime/refresh.sh"
         pkgshare.install "assets/runtime/themes.json"
@@ -26,11 +26,11 @@ class OpenclawDashboard < Formula
         pkgshare.install "examples"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/mudrii/openclaw-dashboard/releases/download/v2026.5.13/openclaw-dashboard-darwin-arm64.tar.gz"
-      sha256 "96b0250cf28c956bb1134aab3bc100129329a1a06b2072546285a5604ed6f4ac"
+    on_arm do
+      url "https://github.com/mudrii/openclaw-dashboard/releases/download/v2026.5.20/openclaw-dashboard-darwin-arm64.tar.gz"
+      sha256 "4f576b53576688c7e9ead0732ada9735267cd5b3c7c75208a0a3e71c0e1bbca4"
 
-      define_method(:install) do
+      def install
         bin.install "openclaw-dashboard"
         pkgshare.install "assets/runtime/refresh.sh"
         pkgshare.install "assets/runtime/themes.json"
@@ -46,36 +46,42 @@ class OpenclawDashboard < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/mudrii/openclaw-dashboard/releases/download/v2026.5.13/openclaw-dashboard-linux-amd64.tar.gz"
-      sha256 "1e6b0db89bb24fcfd193e37390d4996c2bd46d0d08014298bfda7e0a5bccfcb9"
-      define_method(:install) do
-        bin.install "openclaw-dashboard"
-        pkgshare.install "assets/runtime/refresh.sh"
-        pkgshare.install "assets/runtime/themes.json"
-        pkgshare.install "assets/runtime/config.json"
-        pkgshare.install "VERSION"
-        pkgshare.install "docs/CONFIGURATION.md"
-        pkgshare.install "install.sh"
-        pkgshare.install "uninstall.sh"
-        pkgshare.install "web/index.html"
-        pkgshare.install "examples"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/mudrii/openclaw-dashboard/releases/download/v2026.5.20/openclaw-dashboard-linux-amd64.tar.gz"
+        sha256 "3dca7d6bf36eb9134a47ac9e2ef41dd3bcd8de18a0137603998378b88a9f4f6f"
+
+        def install
+          bin.install "openclaw-dashboard"
+          pkgshare.install "assets/runtime/refresh.sh"
+          pkgshare.install "assets/runtime/themes.json"
+          pkgshare.install "assets/runtime/config.json"
+          pkgshare.install "VERSION"
+          pkgshare.install "docs/CONFIGURATION.md"
+          pkgshare.install "install.sh"
+          pkgshare.install "uninstall.sh"
+          pkgshare.install "web/index.html"
+          pkgshare.install "examples"
+        end
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/mudrii/openclaw-dashboard/releases/download/v2026.5.13/openclaw-dashboard-linux-arm64.tar.gz"
-      sha256 "6a64bc041d4b4833da7d9ef726025dfd5e5608cbda16098b4d6b655ef1541251"
-      define_method(:install) do
-        bin.install "openclaw-dashboard"
-        pkgshare.install "assets/runtime/refresh.sh"
-        pkgshare.install "assets/runtime/themes.json"
-        pkgshare.install "assets/runtime/config.json"
-        pkgshare.install "VERSION"
-        pkgshare.install "docs/CONFIGURATION.md"
-        pkgshare.install "install.sh"
-        pkgshare.install "uninstall.sh"
-        pkgshare.install "web/index.html"
-        pkgshare.install "examples"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/mudrii/openclaw-dashboard/releases/download/v2026.5.20/openclaw-dashboard-linux-arm64.tar.gz"
+        sha256 "fdae4d5c882cc465c4106b67af1f85a550abafbb348cc86baae4bd3873ed4a00"
+
+        def install
+          bin.install "openclaw-dashboard"
+          pkgshare.install "assets/runtime/refresh.sh"
+          pkgshare.install "assets/runtime/themes.json"
+          pkgshare.install "assets/runtime/config.json"
+          pkgshare.install "VERSION"
+          pkgshare.install "docs/CONFIGURATION.md"
+          pkgshare.install "install.sh"
+          pkgshare.install "uninstall.sh"
+          pkgshare.install "web/index.html"
+          pkgshare.install "examples"
+        end
       end
     end
   end
