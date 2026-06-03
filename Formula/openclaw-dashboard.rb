@@ -5,13 +5,13 @@
 class OpenclawDashboard < Formula
   desc "Real-time monitoring dashboard for OpenClaw AI gateway"
   homepage "https://github.com/mudrii/openclaw-dashboard"
-  version "2026.5.22"
+  version "2026.6.1"
   license "MIT"
 
   on_macos do
     on_intel do
-      url "https://github.com/mudrii/openclaw-dashboard/releases/download/v2026.5.22/openclaw-dashboard-darwin-amd64.tar.gz"
-      sha256 "da0599a8d400ab1e68957bb1d881999d8b95a0e06668d2ac371486765a8380e7"
+      url "https://github.com/mudrii/openclaw-dashboard/releases/download/v2026.6.1/openclaw-dashboard-darwin-amd64.tar.gz"
+      sha256 "3394ce68c7c00dc5166357d45eb0e203b58f9171242bdd43f41da3f9b9d2bf8e"
 
       def install
         bin.install "openclaw-dashboard"
@@ -27,8 +27,8 @@ class OpenclawDashboard < Formula
       end
     end
     on_arm do
-      url "https://github.com/mudrii/openclaw-dashboard/releases/download/v2026.5.22/openclaw-dashboard-darwin-arm64.tar.gz"
-      sha256 "dc8c392be7a06ed8a4b7ebccbadf1b51311a6b87ab9983a1f4616b5c1d936f40"
+      url "https://github.com/mudrii/openclaw-dashboard/releases/download/v2026.6.1/openclaw-dashboard-darwin-arm64.tar.gz"
+      sha256 "0f89e4b9197ee5485ce360d85fd0be4b831724133c49bdeaf0c1e81b15ed82b2"
 
       def install
         bin.install "openclaw-dashboard"
@@ -48,8 +48,8 @@ class OpenclawDashboard < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/mudrii/openclaw-dashboard/releases/download/v2026.5.22/openclaw-dashboard-linux-amd64.tar.gz"
-        sha256 "e77e30ec9183db157271ce869a1da21193ef1399648e8db6b654643176cedeb0"
+        url "https://github.com/mudrii/openclaw-dashboard/releases/download/v2026.6.1/openclaw-dashboard-linux-amd64.tar.gz"
+        sha256 "53088eee56de24b2f2581941cc2b8340b152f4d709e638c661ab789718304a06"
 
         def install
           bin.install "openclaw-dashboard"
@@ -67,8 +67,8 @@ class OpenclawDashboard < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/mudrii/openclaw-dashboard/releases/download/v2026.5.22/openclaw-dashboard-linux-arm64.tar.gz"
-        sha256 "5cb0e593faae5a01ddfd088ba73ab1d082b317279fc291bd605f2073ba4bfef7"
+        url "https://github.com/mudrii/openclaw-dashboard/releases/download/v2026.6.1/openclaw-dashboard-linux-arm64.tar.gz"
+        sha256 "fe2d66e28e806f8f5b0019a02a4407700f82fffaca82cf99f63bf17c77b3421f"
 
         def install
           bin.install "openclaw-dashboard"
